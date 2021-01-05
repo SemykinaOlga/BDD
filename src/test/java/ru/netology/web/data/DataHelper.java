@@ -1,6 +1,9 @@
 package ru.netology.web.data;
 
 import lombok.Value;
+import lombok.val;
+
+import java.math.BigDecimal;
 
 public class DataHelper {
     private DataHelper() {
@@ -34,11 +37,23 @@ public class DataHelper {
     }
 
     public static CardInfo getCardInfoFirst() {
-    return new CardInfo ("5559 0000 0000 0001");
+        return new CardInfo("5559 0000 0000 0001");
     }
 
     public static CardInfo getCardInfoSecond() {
-        return new CardInfo( "5559 0000 0000 0002");
+        return new CardInfo("5559 0000 0000 0002");
     }
 
+    public static long getBalanceCardPlus(long balance, long transfer) {
+        long cardBalancePlus = balance + transfer;
+        return cardBalancePlus;
+    }
+
+    public static long getBalanceCardMinus(long balance, long transfer) {
+        long cardBalanceMinus = balance - transfer;
+        if (cardBalanceMinus < 0) {
+            return balance;
+        }
+        return cardBalanceMinus;
+    }
 }
