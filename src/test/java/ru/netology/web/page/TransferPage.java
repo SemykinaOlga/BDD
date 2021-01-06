@@ -16,10 +16,10 @@ public class TransferPage {
         amountInput.shouldBe(visible);
     }
 
-    public void transfer(DataHelper.CardInfo info, long transfer) {
+    public void transfer(DataHelper.CardInfo info, String transfer) {
         amountInput.sendKeys(Keys.chord(Keys.CONTROL, "a"));
         amountInput.sendKeys(Keys.BACK_SPACE);
-        amountInput.val(String.valueOf(transfer));
+        amountInput.val(transfer);
         cardFromInput.sendKeys(Keys.chord(Keys.CONTROL, "a"));
         cardFromInput.sendKeys(Keys.BACK_SPACE);
         cardFromInput.setValue(info.getNumberOfCard());

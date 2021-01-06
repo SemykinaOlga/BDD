@@ -31,7 +31,7 @@ public class MoneyTransferTest {
         val transferPage = dashboardPage.plusBalanceFirstCard();
         val transferFrom2To1Card = DataHelper.getCardInfoSecond();
         val transfer = 5000_00;
-        transferPage.transfer(transferFrom2To1Card, transfer / 100);
+        transferPage.transfer(transferFrom2To1Card, String.valueOf(transfer / 100));
         val balanceFirstCard = DataHelper.getBalanceCardPlus(startBalanceOfFirstCard, transfer);
         val balanceSecondCard = DataHelper.getBalanceCardMinus(startBalanceOfSecondCard, transfer);
 
@@ -40,7 +40,7 @@ public class MoneyTransferTest {
         assertEquals(balanceSecondCard, dashboardPage.getBalanceOfSecondCard() * 100);
         val transferPage1 = dashboardPage.plusBalanceSecondCard();
         val transferFrom1To2Card = DataHelper.getCardInfoFirst();
-        transferPage1.transfer(transferFrom1To2Card, transfer / 100);
+        transferPage1.transfer(transferFrom1To2Card, String.valueOf(transfer / 100));
     }
 
     @Test
@@ -52,7 +52,7 @@ public class MoneyTransferTest {
         val transferPage = dashboardPage.plusBalanceSecondCard();
         val transferFrom1To2Card = DataHelper.getCardInfoFirst();
         val transfer = 4000_00;
-        transferPage.transfer(transferFrom1To2Card, transfer / 100);
+        transferPage.transfer(transferFrom1To2Card, String.valueOf(transfer / 100));
         val balanceSecondCard = DataHelper.getBalanceCardPlus(startBalanceOfSecondCard, transfer);
         val balanceFirstCard = DataHelper.getBalanceCardMinus(startBalanceOfFirstCard, transfer);
 
@@ -61,7 +61,7 @@ public class MoneyTransferTest {
         assertEquals(balanceSecondCard, dashboardPage.getBalanceOfSecondCard() * 100);
         val transferPage1 = dashboardPage.plusBalanceFirstCard();
         val transferFrom2To1Card = DataHelper.getCardInfoSecond();
-        transferPage1.transfer(transferFrom2To1Card, transfer / 100);
+        transferPage1.transfer(transferFrom2To1Card, String.valueOf(transfer / 100));
     }
 
     @Test
@@ -73,7 +73,7 @@ public class MoneyTransferTest {
         val transferPage = dashboardPage.plusBalanceSecondCard();
         val transferFrom1To2Card = DataHelper.getCardInfoFirst();
         val transfer = 2050;
-        transferPage.transfer(transferFrom1To2Card, transfer / 100);
+        transferPage.transfer(transferFrom1To2Card, String.valueOf((double) transfer / 100));
         val balanceSecondCard = DataHelper.getBalanceCardPlus(startBalanceOfSecondCard, transfer);
         val balanceFirstCard = DataHelper.getBalanceCardMinus(startBalanceOfFirstCard, transfer);
 
@@ -82,7 +82,7 @@ public class MoneyTransferTest {
         assertEquals(balanceSecondCard, dashboardPage.getBalanceOfSecondCard() * 100);
         val transferPage1 = dashboardPage.plusBalanceFirstCard();
         val transferFrom2To1Card = DataHelper.getCardInfoSecond();
-        transferPage1.transfer(transferFrom2To1Card, transfer / 100);
+        transferPage1.transfer(transferFrom2To1Card, String.valueOf((double) transfer / 100));
     }
 
     @Test
@@ -94,7 +94,7 @@ public class MoneyTransferTest {
         val transferPage = dashboardPage.plusBalanceSecondCard();
         val transferFrom1To2Card = DataHelper.getCardInfoFirst();
         val transfer = 30000_00;
-        transferPage.transfer(transferFrom1To2Card, transfer / 100);
+        transferPage.transfer(transferFrom1To2Card, String.valueOf(transfer / 100));
         val balanceSecondCard = DataHelper.getBalanceCardPlus(startBalanceOfSecondCard, transfer);
         val balanceFirstCard = DataHelper.getBalanceCardMinus(startBalanceOfFirstCard, transfer);
 
@@ -103,6 +103,6 @@ public class MoneyTransferTest {
         assertEquals(balanceSecondCard, dashboardPage.getBalanceOfSecondCard() * 100);
         val transferPage1 = dashboardPage.plusBalanceFirstCard();
         val transferFrom2To1Card = DataHelper.getCardInfoSecond();
-        transferPage1.transfer(transferFrom2To1Card, transfer / 100);
+        transferPage1.transfer(transferFrom2To1Card, String.valueOf(transfer / 100));
     }
 }
